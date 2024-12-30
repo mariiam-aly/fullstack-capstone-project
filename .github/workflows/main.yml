@@ -19,11 +19,11 @@ jobs:
       run: npm install jshint --global
     - name: Run Linter
       run: |
-        # Run JSHint with specific configuration to support ES6+ and ES8
-        jshint --esversion 8 --node ./giftlink-backend/routes/giftRoutes.js
-        jshint --esversion 8 --node ./giftlink-backend/routes/auth.js
-        jshint --esversion 8 --node ./giftlink-backend/routes/searchRoutes.js
-        jshint --esversion 8 --node ./giftlink-backend/app.js
+        # This will automatically use the .jshintrc file for configuration
+        jshint ./giftlink-backend/routes/giftRoutes.js
+        jshint ./giftlink-backend/routes/auth.js
+        jshint ./giftlink-backend/routes/searchRoutes.js
+        jshint ./giftlink-backend/app.js
         echo "Linted all the js files successfully"
   client_build:
     name: Build client
